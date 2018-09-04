@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <title>Bootcamp JavaScript | Ahorcado</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s8">
+                <h3 id="clave"></h3>
+                <h2 id="espacios"></h2>
+            </div>
+            <br>
+            <br>
+            <div class="col s4" id="abc">
+                <!-- Aqui se generan las letras -->
+            </div>
+        </div>
+        <div class="row">   
+            <div class="col s8">
+                <!-- Aqui se generan las imagenes del ahorcado -->
+                <img src="" alt="" id="ahorcado">
+            </div>
+            <div class="col s4">
+                <h4>Puntaje.</h4>
+                <h4 id="puntaje"></h4>
+                <i class="material-icons orange-text">start</i>
+                <h4 id="gp"></h4>
+                <div style="width: 330px; margin: 0 auto;">
+                    <a id="reset" class="waves-effect waves-light btn-large red" href="#">Volver a jugar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 3</title>
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <!-- navbar -->
+    <nav id="navbar-main" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/2000px-Flag_of_Colombia.svg.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Futbol Colombiano
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#ligaA">Liga A</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#todas" id="botonTodas">Ligas Profesionales</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- fin navbar -->
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div data-spy="scroll" data-target="#navbar-main" data-offset="0">
+            
+            <div class="section" id="ligaA">
+                <div class="row">
+                    <div class="col-3">
+                        <h4>Selecciona tu Equipo</h4>
+                    </div>
+                    <div class="col-3">
+                        <select class="form-control" name="" id="equipos">
+                            <option value="nacional">Nacional</option>
+                            <option value="america">America</option>
+                            <option value="millonarios">Millonarios</option>
+                            <option value="tolima">Tolima</option>
+                            <option value="medellin">Medellin</option>
+                            <option value="pasto">Pasto</option>
+                            <option value="cali">Cali</option>
+                        </select>
+                    </div>
+                </div>
+                <hr />
+                <div class="row justify-content-md-center">
+                <div class="row">
+                    <div class="col-5">
+                        <h3 id="equipo"></h3>
+                        <img src="" alt="" id="imagen" width="150" height="150">
+                        <br>
+                        <a id="estrellas">
+                        </a>
+                        <h5 id="estadio"></h5>
+                        <h5 id="entrenador"></h5>
+                        <a href="#" class="badge badge-primary" id="web"></a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <p id="descripcion"></p>   
+                </div>
+                <div class="col-3">
+                    <table class="table table-hover">
+                        <tbody id="jugadores">
+                        </tbody>
+                    </table>
+                </div>   
+            </div> <!-- cierra div ligaA -->
+            <hr />
+            <div class="section" id="todas">
+                    <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Liga A</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Liga B</a>
+                            </li>
+                          </ul>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                        <th scope="col">Club</th>  
+                        <th scope="col"><a href="#" id="ordenLigas">Liga <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></a>
+                            
+                        </th>
+                        <th scope="col">PJ</th>
+                        <th scope="col">G</th>
+                        <th scope="col">E</th>
+                        <th scope="col">P</th>
+                        <th scope="col">GF</th>
+                        <th scope="col">GC</th>
+                        <th scope="col">DG</th>
+                        <th scope="col"><a href="#" id="ordenPuntos">Pts <i class="fas fa-sort-up"><i class="fas fa-sort-down"></i></i></a></th>
+                        </tr>
+                    </thead>
+                    <tbody id="datosLigas">
+                    </tbody>
+                </table>  
+                <div id="tabla"></div>
+            </div> <!-- cierra div todas -->
+        </div>
+    </div>        
+    <!-- Scripts -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="script.js"></script>    
+</body>
+</html>
