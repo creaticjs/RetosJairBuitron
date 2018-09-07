@@ -9,10 +9,12 @@ var jugadoresLista = document.getElementById('jugadores');
 var entrenador = document.getElementById('entrenador');
 var web = document.getElementById('web');
 var ligaA = document.getElementById('ligaA');
+var linkA = document.getElementById('linkA');
+var linkB = document.getElementById('linkB');
 var todas = document.getElementById('botonTodas');
 var todasT = document.getElementById('todas');
 var datosLigas = document.getElementById('datosLigas');
-var ordenLigas = document.getElementById('ordenLigas');
+var ordenClub = document.getElementById('ordenClub');
 var ordenPuntos = document.getElementById('ordenPuntos');
 
 // SetData Equipos de primera A, cada objeto compuesto por:
@@ -221,6 +223,15 @@ function puntosFun(lista){
     return t;
 }
 
+// Funcion que filtra de acuerdo a la liga A o B
+function orden(liga){
+    var resultado = ligasList.filter(function(lig){
+        return lig.liga == liga;
+    })
+    return resultado;
+}
+
+
 function pintarTabla(lista){
     datosLigas.innerHTML = '';
     lista.forEach(element => {
@@ -231,32 +242,48 @@ function pintarTabla(lista){
     });
 }
 
-/*Funcion asociada a un evento que se activa cuando da click en un link "Todas las Ligas"  */
-todas.onclick = function(event) {
-    todasT.setAttribute('style','diplay : activate');
-    pintarTabla(ligasList);
+// Evento que al darle click pinta los equipos de la categoria B
+linkB.onclick = function(event) {
+    linkA.setAttribute('class','nav-link');
+    linkB.setAttribute('class','nav-link active');
+    pintarTabla(orden("B"));
+   
 }
 
-/*Evento que ordena por liga A o B */
-ordenLigas.onclick = function(event) {
-    ligasList.sort(function(a,b){
-        if(a.liga > b.liga)
-        {
-            return 1;
-        }
-        if(a.liga < b.liga)
-        {
-            return -1;
-        }
-        return 0;
-    })
-    pintarTabla(ligasList);
-};
+// Evento que al darle click pinta los equipos de la categoria A
+linkA.onclick = function(event) {
+    linkA.setAttribute('class','nav-link active');
+    linkB.setAttribute('class','nav-link');
+    pintarTabla(orden("A"));
+    console.log(linkA.getAttribute('class'));
+}
 
-/*Evento que ordena de acuerdo a los puntos de tenga cada equipo*/
-ordenPuntos.onclick = function(event) {
-    ligasList.sort(function(a,b){
-        var largo = ligasList[0].puntos.length - 1;
+
+/*Funcion asociada a un evento que se activa cuando da click en un link "Todas las Ligas"  */
+todas.onclick = function(event) {
+    // muestra la cabecera de la tabla
+    todasT.setAttribute('style','diplay : activate');
+    pintarTabla(orden("A"));
+}
+
+function SorfClub(lista){
+lista.sort(function(a,b){
+    if(a.nombre > b.nombre)
+    {
+        return 1;
+    }
+    if(a.nombre < b.nombre)
+    {
+        return -1;
+    }
+    return 0;
+})
+    pintarTabla(lista);
+}
+
+function SortScore(lista){
+    lista.sort(function(a,b){
+        var largo = lista[0].puntos.length - 1;
         if(a.puntos[largo] < b.puntos[largo])
         {
             return 1;
@@ -268,10 +295,25 @@ ordenPuntos.onclick = function(event) {
         return 0;
     })
     
-    pintarTabla(ligasList);
+    pintarTabla(lista);
+}
+
+/*Evento que ordena de acuerdo a los puntos de tenga cada equipo*/
+ordenPuntos.onclick = function(event) {
+    if(linkA.getAttribute('class') == 'nav-link active')
+    {
+        SortScore(orden("A"));
+    }
+    else{
+        SortScore(orden("B"))
+    }
 };
-// Clase equipo ok
-// funcion crearListaEquipos()  
-// funcion pintarTabla() ok
-// funcion organizarCategoria()
-// funcion organizarPuntos()
+
+/*Evento que ordena por club */
+ordenClub.onclick = function(event) {
+    if(linkA.getAttribute('class') == 'nav-link active'){
+        SorfClub(orden("A"));
+    } else{
+        SorfClub(orden("B"));
+    }
+};
