@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Perfil GitHub</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Perfil GitHub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Lista Retos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Ahorcado</a>
+            <a class="dropdown-item" href="#">Liga Futbol</a>
+            <a class="dropdown-item" href="#">Perfil GitHub</a>
+            </div>
+        </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    </nav>
+<!-- fin-navbar -->
+<div class="container">
+    
+    <div class="row">
+        <button onclick="getRequestGit()" type="button" class="btn btn-dark">Traer datos</button>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 10rem;" id="card">
+                <img class="card-img-top"  id="avatar" src="" alt="Avatar">
+                <div class="card-body">
+                    <h5 class="card-title" id="nombre"></h5>
+                    <p class="card-text" id="bio">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-success">
+                                <span class="badge badge-light" id="followers"></span> Followers
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-danger">
+                                <span class="badge badge-light" id="following"></span> Following
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" id="tabla">
+            <h3><span id="reposPublicos"></span> Repositorios</h3>
+   
+    
+            <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                    </thead>
+                    <tbody id='repos'>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

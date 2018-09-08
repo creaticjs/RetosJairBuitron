@@ -22,9 +22,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Lista de Retos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="Ahorcado/index.html">Ahorcado</a>
+                  <a class="dropdown-item" href="LigaFutbol/index.html">Liga Futbol</a>
+                  <!-- <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#"></a> -->
+                </div>
+              </li>
             <li class="nav-item">
               <a class="nav-link" href="#todas" id="botonTodas">Tabla Puntos</a>
             </li>
@@ -34,7 +42,13 @@
     <!-- fin navbar -->
     <br />
     <br />
-    <br />
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Liga Futbol</li>
+        </ol>
+    </nav>
     <div class="container">
         <div data-spy="scroll" data-target="#navbar-main" data-offset="0">
             
