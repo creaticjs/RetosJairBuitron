@@ -11,6 +11,7 @@ var web = document.getElementById('web');
 var ligaA = document.getElementById('ligaA');
 var linkA = document.getElementById('linkA');
 var linkB = document.getElementById('linkB');
+var linkT = document.getElementById('linkT');
 var todas = document.getElementById('botonTodas');
 var todasT = document.getElementById('todas');
 var datosLigas = document.getElementById('datosLigas');
@@ -231,7 +232,7 @@ function orden(liga){
     return resultado;
 }
 
-
+// funcion que recibe una lista y dibuja los datos en una tabla
 function pintarTabla(lista){
     datosLigas.innerHTML = '';
     lista.forEach(element => {
@@ -242,29 +243,40 @@ function pintarTabla(lista){
     });
 }
 
-// Evento que al darle click pinta los equipos de la categoria B
-linkB.onclick = function(event) {
-    linkA.setAttribute('class','nav-link');
-    linkB.setAttribute('class','nav-link active');
-    pintarTabla(orden("B"));
-   
-}
-
-// Evento que al darle click pinta los equipos de la categoria A
-linkA.onclick = function(event) {
-    linkA.setAttribute('class','nav-link active');
-    linkB.setAttribute('class','nav-link');
-    pintarTabla(orden("A"));
-    console.log(linkA.getAttribute('class'));
-}
-
-
 /*Funcion asociada a un evento que se activa cuando da click en un link "Todas las Ligas"  */
 todas.onclick = function(event) {
     // muestra la cabecera de la tabla
     todasT.setAttribute('style','diplay : activate');
+    linkA.setAttribute('class','nav-link');
+    linkB.setAttribute('class','nav-link');
+    linkT.setAttribute('class','nav-link active');
+    pintarTabla(ligasList);
+}
+
+// Evento que al darle click pinta los datos de todas las ligas
+linkT.onclick = function(event) {
+    linkT.setAttribute('class','nav-link active');
+    linkA.setAttribute('class','nav-link');
+    linkB.setAttribute('class','nav-link');
+    pintarTabla(ligasList);
+}
+
+// Evento que al darle click pinta los equipos de la categoria A
+linkA.onclick = function(event) {
+    linkT.setAttribute('class','nav-link');
+    linkA.setAttribute('class','nav-link active');
+    linkB.setAttribute('class','nav-link');
     pintarTabla(orden("A"));
 }
+
+// Evento que al darle click pinta los equipos de la categoria B
+linkB.onclick = function(event) {
+    linkT.setAttribute('class','nav-link');
+    linkA.setAttribute('class','nav-link');
+    linkB.setAttribute('class','nav-link active');
+    pintarTabla(orden("B"));
+}
+
 
 function SorfClub(lista){
 lista.sort(function(a,b){
@@ -307,6 +319,10 @@ ordenPuntos.onclick = function(event) {
     else{
         SortScore(orden("B"))
     }
+    if(linkT.getAttribute('class') == 'nav-link active')
+    {
+        SortScore(ligasList);
+    }
 };
 
 /*Evento que ordena por club */
@@ -315,5 +331,10 @@ ordenClub.onclick = function(event) {
         SorfClub(orden("A"));
     } else{
         SorfClub(orden("B"));
+    }
+
+    if(linkT.getAttribute('class') == 'nav-link active')
+    {
+        SorfClub(ligasList);
     }
 };
