@@ -1,5 +1,7 @@
 var card = document.getElementById('card');
 var tabla = document.getElementById('tabla');
+var BotonSeguidores = document.getElementById('BotonSeguidores');
+var Boton = document.getElementById('Boton');
 
 window.onload = function(){
     card.style.display = (card.style.display == 'none') ? 'block' : 'none';
@@ -50,6 +52,14 @@ var datosrepositorio={};
         }
 
 
+    Boton.onclick = function(){
+        swal({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            type: 'error',
+            confirmButtonText: 'Cool'
+          })
+    }
         
         
            
