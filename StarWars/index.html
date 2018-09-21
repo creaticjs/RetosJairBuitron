@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="icon/favicon.ico">
 
     <title>Star Wars | SWAPI</title>
 
@@ -18,7 +18,10 @@
     
      <!-- Iconos -->
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-</head>
+
+     <!-- sweetalert2 -->
+     <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css">
+    </head>
 
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -28,44 +31,52 @@
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
-            <img src="https://png.icons8.com/color/1600/star-wars.png" alt="" width="190" height="160">
+            <a href="index.html">
+              <img src="https://png.icons8.com/color/1600/star-wars.png" alt="" width="190" height="160">
+            </a>
             <ul class="nav flex-column">
               <li class="nav-item">
                 <button type="button" class="btn btn-link" id="peliculas">
                     <img src="icon/film.png" alt="" width="20" height="20">
                     Peliculas
+                    <span class="badge badge-pill badge-warning">7</span>
                 </button>
               </li>
               <li class="nav-item">
                 <button type="button" class="btn btn-link" id="personajes">
                   <img src="icon/person.png" alt="" width="20" height="20">
                   Personajes
+                  <span class="badge badge-pill badge-warning">87</span>
                 </button>
               </li>
               <li class="nav-item">
-                <button type="button" class="btn btn-link" id="especies">
+                <button type="button" class="btn btn-link" id="especie">
                   <img src="icon/ewok.png" alt="" width="20" height="20">
                   Especies
+                  <span class="badge badge-pill badge-warning">37</span>
                 </button>
               </li>
               <li class="nav-item">
                 <button type="button" class="btn btn-link" id="planetas">
                   <img src="icon/death-star.png" alt="" width="20" height="20">
                   Planetas
+                  <span class="badge badge-pill badge-warning">61</span>
                 </button>
               </li>
               <li class="nav-item">
                 <button type="button" class="btn btn-link" id="naves">
                   <img src="icon/starship.png" alt="" width="21" height="21">
                   Naves
+                  <span class="badge badge-pill badge-warning">37</span>
                 </button>
               </li>
               <li class="nav-item">
                   <button type="button" class="btn btn-link" id="vehiculos">
-                        <img src="icon/X-34-Landspeeder.png" alt="" width="21" height="21">
-                  Vehiculos  
+                    <img src="icon/X-34-Landspeeder.png" alt="" width="21" height="21">
+                    Vehiculos
+                    <span class="badge badge-pill badge-warning">39</span>
                   </button>
-                </li>
+              </li>
             </ul>
           </div>
         </div> 
@@ -78,113 +89,118 @@
          <br>
 
   <section id="seccion_inicio">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" width="800" height="400" src="http://www.wallpapers13.com/wp-content/uploads/2016/04/Star-Wars-episode-iv-caracters-Harrison-Ford-Darth-Vader-Carrie-Fisher-Luke-Skywalker-Chewbacca-Wallpaper-HD-2560x1440.jpg" alt="Post Episodio IV">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" width="800" height="400" src="https://www.hijos-del-atomo.com/wp-content/uploads/2015/12/starwars1-1021x580.jpg" alt="Post Episodio I">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" width="800" height="400" src="https://assets.metrolatam.com/gt/2015/10/20/1479671530024669736-1200x600.jpg" alt="Post Episodio VII">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" width="800" height="400" src="http://s2.dmcdn.net/f9cZI.jpg" alt="Post Rogue One">
-        </div>
-      </div> 
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div> 
-  </section> <!-- seccion inicio fin -->
-            
-  <section id="seccion_peliculas">
     <div class="container">
-      <div class="row">
-        <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Detalle</th>
-              </tr>
-            </thead>
-            <tbody id="tbodypelicula">
-        
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section><!-- seccion peliculas fin -->
-
-  <section id="seccion_personajes">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Detalle</th>
-                  </tr>
-                </thead>
-                <tbody id="tbodypersonaje">
-            
-                </tbody>
-              </table>
-        </div>
-      </div>
-    </div>
-  </section> <!-- seccion personajes fin -->
-
-  <section id="seccion_especies">
-      <div class="container">
         <div class="row">
           <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" width="750" height="450" src="http://www.wallpapers13.com/wp-content/uploads/2016/04/Star-Wars-episode-iv-caracters-Harrison-Ford-Darth-Vader-Carrie-Fisher-Luke-Skywalker-Chewbacca-Wallpaper-HD-2560x1440.jpg" alt="Post Episodio IV">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" width="750" height="450" src="https://www.hijos-del-atomo.com/wp-content/uploads/2015/12/starwars1-1021x580.jpg" alt="Post Episodio I">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" width="750" height="450" src="https://assets.metrolatam.com/gt/2015/10/20/1479671530024669736-1200x600.jpg" alt="Post Episodio VII">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" width="750" height="450" src="http://s2.dmcdn.net/f9cZI.jpg" alt="Post Rogue One">
+                </div>
+              </div> 
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>     
+  </section> <!-- seccion inicio fin -->
+
+  <section id="seccion_lista">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+              <h2 id='lista_titulo'></h2>  
               <table class="table table-hover">
                   <thead>
                     <tr>
+                      <th scope="col">Imagen</th>
                       <th scope="col">Nombre</th>
-                      <th scope="col">Detalle</th>
                     </tr>
                   </thead>
-                  <tbody id="tbodyespecie">
-              
+                  <tbody id="tbodylista" class='class_generic'> 
+                    <!-- Aqui se genera el listado de peliculas, personajes, especies, planetas, naves y vehiculos -->
                   </tbody>
-                </table>
+              </table>
           </div>
         </div>
       </div>
   </section> <!-- seccion especies fin -->
 
-  <section id="seccion_lista">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
-              <table class="table table-hover">
-                  <thead>
-                    <tr>
-                        <th scope="col">Imagen</th>
-                      <th scope="col">Nombre</th>
-                      <th scope="col">Detalle</th>
-                    </tr>
-                  </thead>
-                  <tbody id="tbodylista">
-                    <!-- Aqui se genera el listado de peliculas, personajes, especies, planetas, naves y vehiculos -->
-                  </tbody>
-                </table>
-          </div>
+  <section id="detail_film">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page" id="detalle"></li>
+            </ol>
+          </nav>
         </div>
+
+        <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="card">
+              <h5 class="card-header" id='title_film'></h5>
+              <div class="card-body">
+                <h5 class="card-title" id='episode_id'></h5>
+                <h5  id='director'></h5>
+                <h5  id='producer'></h5>
+                <p class="card-text" id='opening_crawl'></p>
+                <h5  id='release_date'></h5>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" id="detail_person_film">Personajes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="detail_planet_film">Planetas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="detail_species_film">Especies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="detail_naves_film">Naves</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="detail_vehiculos_film">Vehiculos</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <table class="table table-hover">
+            <tbody id="tbody_lista" class='class_generic'> 
+              <!-- Aqui se genera el listado de peliculas, personajes, especies, planetas, naves y vehiculos -->
+            </tbody>
+          </table>
+        </div>
+                
       </div>
-    </section> <!-- seccion especies fin -->
+    </div>
+  </section>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -193,9 +209,24 @@
     <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script> -->
     <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+    
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+
     <script src="script.js"></script>
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    
+    <!-- sweetalert2 -->
+    <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+
+  
+  
   </body>
 </html>

@@ -28,76 +28,91 @@
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
-            <img src="https://png.icons8.com/color/1600/star-wars.png" alt="" width="190" height="160">
+            <a href="index.html">
+              <img src="https://png.icons8.com/color/1600/star-wars.png" alt="" width="190" height="160">
+            </a>
             <ul class="nav flex-column">
-              
-              <li class="nav-item" id="peliculas">
-                <a class="nav-link" href="peliculas.html">
-                 <i class="fas fa-film"></i>
-                  Peliculas
-                </a>
+              <li class="nav-item">
+                <button type="button" class="btn btn-link" id="peliculas">
+                    <img src="icon/film.png" alt="" width="20" height="20">
+                    Peliculas
+                </button>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <button type="button" class="btn btn-link" id="personajes">
                   <img src="icon/person.png" alt="" width="20" height="20">
                   Personajes
-                </a>
+                </button>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <button type="button" class="btn btn-link" id="especies">
                   <img src="icon/ewok.png" alt="" width="20" height="20">
                   Especies
-                </a>
+                </button>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <button type="button" class="btn btn-link" id="planetas">
                   <img src="icon/death-star.png" alt="" width="20" height="20">
                   Planetas
-                </a>
+                </button>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <button type="button" class="btn btn-link" id="naves">
                   <img src="icon/starship.png" alt="" width="21" height="21">
                   Naves
-                </a>
+                </button>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                  <button type="button" class="btn btn-link" id="vehiculos">
                         <img src="icon/X-34-Landspeeder.png" alt="" width="21" height="21">
                   Vehiculos  
-                </a>
+                  </button>
                 </li>
             </ul>
           </div>
-        </nav>
-
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-         <br>
-         <br>
-         <br>
-         
-         <!-- <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">Episodio</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Director</th>
-                    <th scope="col">productor</th>
-                    <th scope="col">Personajes</th>
-                    <th scope="col">Especies</th>
-                    <th scope="col">Planetas</th>
-                    <th scope="col">Naves</th>
-                    <th scope="col">Vehiculos</th>
-                  </tr>
-                </thead>
-                <tbody id="personfilm">
-            
-                </tbody>
-              </table> -->
-          
-        </main>
+        </div> 
       </div>
-    </div>
+    </nav> <!-- slidenav fin -->
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+  <!-- quitar luego -->
+  <h2 id="detalle_url"></h2>  
+  <!-- quitar luego -->
+  <section id="seccion_lista">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+              <h2 id='lista_titulo'></h2>  
+              <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Siguiente</a>
+                  </li>
+                </ul>
+              </nav>
+              
+              <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Imagen</th>
+                      <th scope="col">Nombre</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbodylista">
+                    <!-- Aqui se genera el listado de peliculas, personajes, especies, planetas, naves y vehiculos -->
+                  </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </section> <!-- seccion especies fin -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
