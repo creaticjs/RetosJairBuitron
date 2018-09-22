@@ -21,11 +21,22 @@
 
      <!-- sweetalert2 -->
      <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css">
+ 
+    <style>
+      .bg-body {
+        background-color:#BEBDBB;
+        /* background-image:url('http://1.bp.blogspot.com/-cFtHbY73los/UPoktCjP0GI/AAAAAAAAAng/DyvtBT4CrQs/s1600/texture13.jpg'); */
+      } 
+      .sidebar-sticky {
+        background-color: #5A5A59;
+      }
+    </style>
+
     </head>
 
-  <body>
+  <body class='bg-body'>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0"><i class="fas fa-home"></i> Inicio</a>
     </nav>
     <div class="container-fluid">
       <div class="row">
@@ -38,43 +49,42 @@
               <li class="nav-item">
                 <button type="button" class="btn btn-link" id="peliculas">
                     <img src="icon/film.png" alt="" width="20" height="20">
-                    Peliculas
-                    <span class="badge badge-pill badge-warning">7</span>
+                    <span class="badge badge-pill badge-warning">Peliculas</span>
                 </button>
               </li>
               <li class="nav-item">
                 <button type="button" class="btn btn-link" id="personajes">
                   <img src="icon/person.png" alt="" width="20" height="20">
-                  Personajes
-                  <span class="badge badge-pill badge-warning">87</span>
+                  
+                  <span class="badge badge-pill badge-warning">Personajes</span>
                 </button>
               </li>
               <li class="nav-item">
                 <button type="button" class="btn btn-link" id="especie">
                   <img src="icon/ewok.png" alt="" width="20" height="20">
-                  Especies
-                  <span class="badge badge-pill badge-warning">37</span>
+                  
+                  <span class="badge badge-pill badge-warning">Especies</span>
                 </button>
               </li>
               <li class="nav-item">
                 <button type="button" class="btn btn-link" id="planetas">
                   <img src="icon/death-star.png" alt="" width="20" height="20">
-                  Planetas
-                  <span class="badge badge-pill badge-warning">61</span>
+                  
+                  <span class="badge badge-pill badge-warning">Planetas</span>
                 </button>
               </li>
               <li class="nav-item">
                 <button type="button" class="btn btn-link" id="naves">
                   <img src="icon/starship.png" alt="" width="21" height="21">
-                  Naves
-                  <span class="badge badge-pill badge-warning">37</span>
+                  
+                  <span class="badge badge-pill badge-warning">Naves</span>
                 </button>
               </li>
               <li class="nav-item">
                   <button type="button" class="btn btn-link" id="vehiculos">
                     <img src="icon/X-34-Landspeeder.png" alt="" width="21" height="21">
-                    Vehiculos
-                    <span class="badge badge-pill badge-warning">39</span>
+                    
+                    <span class="badge badge-pill badge-warning">Vehiculos</span>
                   </button>
               </li>
             </ul>
@@ -88,7 +98,7 @@
          <br>
          <br>
 
-  <section id="seccion_inicio">
+  <section  id="seccion_inicio">
     <div class="container">
         <div class="row">
           <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -201,6 +211,67 @@
       </div>
     </div>
   </section>
+
+  <section id="detail_person">
+      <div class="container">
+        <div class="row">
+  
+          <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page" id="detalle_person"></li>
+              </ol>
+            </nav>
+          </div>
+  
+          <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="row">
+              <div class="col-sm">
+                <div class="card">
+                <h5 class="card-header" id='name_person'></h5>
+                  <div class="card-body">
+                    <h5 class="card-title" id='height'></h5>
+                    <h5  id='mass'></h5>
+                    <h5  id='hair_color'></h5>
+                    <h5  id='skin_color'></h5>
+                    <h5  id='eye_color'></h5>
+                    <h5  id='gender'></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <img id="img_det_person" src="" alt="Card image cap" width="200" height="290">
+              </div>
+            </div> <!-- cierra row -->
+              <br>
+          </div>
+          <br>
+          <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" href="#" id="detail_vehiculos_person">Vehiculos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="detail_naves_person">Naves</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#" id="detail_peliculas_person">Peliculas</a>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <table class="table table-hover">
+              <tbody id="tbody_lista_person" class='class_generic'> 
+                <!-- Aqui se genera el listado de peliculas, personajes, especies, planetas, naves y vehiculos -->
+              </tbody>
+            </table>
+          </div>
+                  
+        </div>
+      </div>
+    </section>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

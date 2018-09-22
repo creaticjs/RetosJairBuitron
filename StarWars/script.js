@@ -1,133 +1,24 @@
 // Arreglo que contiene las url de las iamgenes de las peliculas
-films = [
-	{
-		name: 1,
-		url: 'img/films/film-1.png'
-	},
-	{
-		name: 2,
-		url: 'img/films/film-2.png'
-	},
-	{
-		name: 3,
-		url: 'img/films/film-3.png'
-	},
-	{
-		name: 4,
-		url: 'img/films/film-4.png'
-	},
-	{
-		name: 5,
-		url: 'img/films/film-5.png'
-	},
-	{
-		name: 6,
-		url: 'img/films/film-6.png'
-	},
-	{
-		name: 7,
-		url: 'img/films/film-7.png'
-	}
-]
+films=[{name: 1,url: 'img/films/film-1.png'},{name: 2,url: 'img/films/film-2.png'},{name: 3,url: 'img/films/film-3.png'},{name: 4,url: 'img/films/film-4.png'},{name: 5,url: 'img/films/film-5.png'},{name: 6,url: 'img/films/film-6.png'},{name: 7,url: 'img/films/film-7.png'}]
 
-persons = [
-	{
-		name: 'Beru Whitesun lars',
-		url: 'img/persons/Beru Whitesun lars.png'
-	},
-	{
-		name: 'Biggs Darklighter',
-		url: 'img/persons/Biggs Darklighter.png'
-	},
-	{
-		name: 'C-3PO',
-		url: 'img/persons/C-3PO.png'
-	},
-	{
-		name: 'Darth Vader',
-		url: 'img/persons/Darth Vader.png'
-	},
-	{
-		name: 'Leia Organa',
-		url: 'img/persons/Leia Organa.png'
-	},
-	{
-		name: 'Luke Skywalker',
-		url: 'img/persons/Luke Skywalker.png'
-	},
-	{
-		name: 'Obi-Wan Kenobi',
-		url: 'img/persons/Obi-Wan Kenobi.png'
-	},
-	{
-		name: 'Owen Lars',
-		url: 'img/persons/Owen Lars.jpg'
-	},
-	{
-		name: 'R2-D2',
-		url: 'img/persons/R2-D2.png'
-	},
-	{
-		name: 'R5-D4',
-		url: 'img/persons/R5-D4.png'
-	}
-]
+persons=[{name: 'Beru Whitesun lars',url: 'img/persons/Beru Whitesun lars.png'},{name: 'Biggs Darklighter',url: 'img/persons/Biggs Darklighter.png'},{name: 'C-3PO',url: 'img/persons/C-3PO.png'},{name: 'Darth Vader',url: 'img/persons/Darth Vader.png'},{name: 'Leia Organa',url: 'img/persons/Leia Organa.png'},{name: 'Luke Skywalker',url: 'img/persons/Luke Skywalker.png'},{name: 'Obi-Wan Kenobi',url: 'img/persons/Obi-Wan Kenobi.png'},{name: 'Owen Lars',url: 'img/persons/Owen Lars.jpg'},{name: 'R2-D2',url: 'img/persons/R2-D2.png'},{name: 'R5-D4',url: 'img/persons/R5-D4.png'}]
 
-especies = [
-	{
-		name: 'Dug',
-		url: 'img/especies/Dug.png'
-	},
-	{
-		name: 'Ewok',
-		url: 'img/especies/Ewok.png'
-	},
-	{
-		name: 'Gungan',
-		url: 'img/especies/Gungan.jpg'
-	},
-	{
-		name: 'Hutt',
-		url: 'img/especies/Hutt.png'
-	},
-	{
-		name: 'Mon Calamari',
-		url: 'img/especies/Mon Calamari.png'
-	},
-	{
-		name: 'Neimodian',
-		url: 'img/especies/Neimodian.png'
-	},
-	{
-		name: 'Sullustan',
-		url: 'img/especies/Sullustan.png'
-	},
-	{
-		name: 'Toydarian',
-		url: 'img/especies/Toydarian.png'
-	},
-	{
-		name: 'Trandoshan',
-		url: 'img/especies/Trandoshan.jpg'
-	},
-	{
-		name: "Yoda's species",
-		url: "img/especies/Yoda's species.png"
-	}
-]
+especies=[{name: 'Dug',url: 'img/especies/Dug.png'},{name: 'Ewok',url: 'img/especies/Ewok.png'},{name: 'Gungan',url: 'img/especies/Gungan.jpg'},{name: 'Hutt',url: 'img/especies/Hutt.png'},{name: 'Mon Calamari',url: 'img/especies/Mon Calamari.png'},{name: 'Neimodian',url: 'img/especies/Neimodian.png'},{name: 'Sullustan',url: 'img/especies/Sullustan.png'},{name: 'Toydarian',url: 'img/especies/Toydarian.png'},{name: 'Trandoshan',url: 'img/especies/Trandoshan.jpg'},{name: "Yoda's species",url: "img/especies/Yoda's species.png"}]
 
 // Funcion que inicializa la seccion se muestra y las que van a estar ocultas
 window.onload = function(){
 	seccion_lista.style.display = (seccion_lista.style.display == 'none') ? 'none' : 'none';
 	detail_film.style.display = (detail_film.style.display == 'none') ? 'none' : 'none';
+	detail_person.style.display = (detail_person.style.display == 'none') ? 'none' : 'none';
 }
 
 // Variables globales
 var seccion_inicio = document.getElementById('seccion_inicio');
 var seccion_lista = document.getElementById('seccion_lista');
 var detail_film = document.getElementById('detail_film');
+var detail_person = document.getElementById('detail_person');
 var lista_film = [];
-
+var lista_person = [];
 
 datosConsulta = {};
 // Funcion principal encargada de hacer las peticiones a SWAPI
@@ -147,26 +38,36 @@ function getUrl(url){
 			}
 			if(url == 'https://swapi.co/api/people'){
 				seccion_inicio.style.display = (seccion_inicio.style.display == 'none') ? 'none' : 'none';
+				detail_film.style.display = (detail_film.style.display == 'none') ? 'none' : 'none';
+				detail_person.style.display = (detail_person.style.display == 'none') ? 'none' : 'none';
 				seccion_lista.setAttribute('style','diplay : activate');
 				pintarPersonaje(lista);
 			}
 			if(url == 'https://swapi.co/api/species'){
 				seccion_inicio.style.display = (seccion_inicio.style.display == 'none') ? 'none' : 'none';
+				detail_film.style.display = (detail_film.style.display == 'none') ? 'none' : 'none';
+				detail_person.style.display = (detail_person.style.display == 'none') ? 'none' : 'none';
 				seccion_lista.setAttribute('style','diplay : activate');
 				pintarEspecie(lista);
 			}
 			if(url == 'https://swapi.co/api/planets'){
 				seccion_inicio.style.display = (seccion_inicio.style.display == 'none') ? 'none' : 'none';
+				detail_film.style.display = (detail_film.style.display == 'none') ? 'none' : 'none';
+				detail_person.style.display = (detail_person.style.display == 'none') ? 'none' : 'none';
 				seccion_lista.setAttribute('style','diplay : activate');
 				pintarPlaneta(lista);
 			}
 			if(url == 'https://swapi.co/api/starships'){
 				seccion_inicio.style.display = (seccion_inicio.style.display == 'none') ? 'none' : 'none';
+				detail_film.style.display = (detail_film.style.display == 'none') ? 'none' : 'none';
+				detail_person.style.display = (detail_person.style.display == 'none') ? 'none' : 'none';
 				seccion_lista.setAttribute('style','diplay : activate');
 				pintarNave(lista);
 			}
 			if(url == 'https://swapi.co/api/vehicles'){
 				seccion_inicio.style.display = (seccion_inicio.style.display == 'none') ? 'none' : 'none';
+				detail_film.style.display = (detail_film.style.display == 'none') ? 'none' : 'none';
+				detail_person.style.display = (detail_person.style.display == 'none') ? 'none' : 'none';
 				seccion_lista.setAttribute('style','diplay : activate');
 				pintarVehiculo(lista);
 			}
@@ -191,13 +92,23 @@ function buscarFilm(id, lista){
 // Funcion que recibe un nombre una lista y 
 // busca de acuerdo al nombre que imagen corresponde al personaje	
 function buscarPerson(nombre, lista){
-	var img = '';
+	var img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png';
 	for(i of lista){
 		if(nombre == i.name){
 			img = '<img src="'+ i.url +'" width="110" height="160"></img>';
 		}
 	}
 	return img;	
+}
+
+function buscarPersonImg(nombre, lista){
+	var img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png';
+	for(i of lista){
+		if(nombre == i.name){
+			img = i.url;
+		}
+	}
+	return img;
 }
 
 // Funcion que recibe un nombre una lista y 
@@ -212,7 +123,6 @@ function buscarEspecie(nombre, lista){
 	return img;	
 }
 
-
 function detalleFilmUrl(id){
 	var url = '';
 	lista_film.forEach(element =>{
@@ -223,11 +133,20 @@ function detalleFilmUrl(id){
 	return url;
 }
 
+function detallePersonUrl(name){
+	var url = '';
+	lista_person.forEach(element =>{
+		if(name == element.name){
+			url = element.url;
+		}
+	})
+	return url;
+}
+
 // Funcion que crea la tabla con la lista de peliculas
 function pintarPelicula(lista){
 	tbodylista.innerHTML = '';
 	lista_titulo.innerHTML = 'Lista de Peliculas';
-	
     lista.forEach(element => {
 		var film = {}
 		film['title'] = element.title;
@@ -243,7 +162,6 @@ function pintarPelicula(lista){
 						`;
 		tbodylista.appendChild(tr);
 	});
-	
 	var la = document.querySelectorAll(".class_generic th a");
 	
 	la.forEach(function (data){
@@ -253,8 +171,8 @@ function pintarPelicula(lista){
 		var detalle_film_url = detalleFilmUrl(data.id);
 		seccion_lista.style.display = (seccion_lista.style.display == 'none') ? 'none' : 'none';
 		detail_film.setAttribute('style','diplay : activate');
-				
-		getPeticion(detalle_film_url,renderDetallePelicula,function(){
+		var id = 'detalle_film';
+		getPeticion(detalle_film_url, id, renderDetallePelicula,function(){
 			swal({
 				type: 'success',
 				title: 'Carga completa!',
@@ -271,8 +189,11 @@ function pintarPersonaje(lista){
 	tbodylista.innerHTML = '';
 	lista_titulo.innerHTML = 'Lista de Personajes';
     lista.forEach(element => {
+		var character = {}
+		character['name'] = element.name;
+		character['url'] = element.url;
+		lista_person.push(character);
 		var tr = document.createElement('tr');
-		console.log(element.name);
 		var td = `<td>${buscarPerson(element.name,persons)}</td>`;
 		tr.innerHTML = `${td}
 						<th scope="row">
@@ -281,6 +202,26 @@ function pintarPersonaje(lista){
 						</th>`;
 		tbodylista.appendChild(tr);
 	});
+	var la = document.querySelectorAll(".class_generic th a");
+	
+	la.forEach(function (data){
+		//ahora le asignamos una función anonima al evento onclick
+		data.onclick = function (){
+		//mostramos un alert con el id del elemento que se hizo click
+		var detalle_person_url = detallePersonUrl(data.id);
+		seccion_lista.style.display = (seccion_lista.style.display == 'none') ? 'none' : 'none';
+		detail_person.setAttribute('style','diplay : activate');
+		var id = 'detalle_person';	
+		getPeticion(detalle_person_url, id, renderDetallePerson,function(){
+			swal({
+				type: 'success',
+				title: 'Carga completa!',
+				showConfirmButton: false,
+  				timer: 3000
+			})
+		});
+	}
+});
 }
 
 // Funcion que crea la tabla con la lista de especies
@@ -401,7 +342,6 @@ function obtenerLista(url){
 	})
 }
 
-
 async function getDetalleLista(lista){
 	var promesas = lista.map(url => obtenerLista(url))
 	try {
@@ -422,14 +362,67 @@ async function getDetalleLista(lista){
 	}
 }
 
-function getPeticion(url,render, callback){
+async function getDetalleListaPerson(lista){
+	console.log('Datos lista ->'+lista)
+	var promesas = lista.map(url => obtenerLista(url))
+	try {
+		var listado = await Promise.all(promesas)
+		tbody_lista_person.innerHTML = ''
+		listado.forEach(element => {
+			var tr = document.createElement('tr')
+			tr.innerHTML = `
+					<th scope="row">
+						${element.name}
+					</th>
+					`;
+		tbody_lista_person.appendChild(tr);
+		});
+		if(lista.length==0){
+			var tr = document.createElement('tr')
+			tr.innerHTML = '<th scope="row">Ninguno</th>';
+			tbody_lista_person.appendChild(tr);
+		}
+	} catch(url) {
+		onError(url)
+	}
+}
+
+async function getDetalleListaPersonFilm(lista){
+	console.log('Datos lista ->'+lista)
+	var promesas = lista.map(url => obtenerLista(url))
+	try {
+		var listado = await Promise.all(promesas)
+		tbody_lista_person.innerHTML = ''
+		listado.forEach(element => {
+			var tr = document.createElement('tr')
+			tr.innerHTML = `
+					<th scope="row">
+						${element.title}
+					</th>
+					`;
+		tbody_lista_person.appendChild(tr);
+		});
+		if(lista.length==0){
+			var tr = document.createElement('tr')
+			tr.innerHTML = '<th scope="row">Ninguno</th>';
+			tbody_lista_person.appendChild(tr);
+		}
+	} catch(url) {
+		onError(url)
+	}
+}
+
+function getPeticion(url, id, render, callback){
 	var httpR = new XMLHttpRequest();
 	httpR.onreadystatechange = function(){
-		if(this.readyState==4&& this.status==200){
-			
-			renderDetallePelicula(JSON.parse(this.responseText));
-			
-			// renderDetallePlanetas(JSON.parse(this.responseText));
+		if(this.readyState==4 && this.status==200){
+			if (id == 'detalle_film'){
+				renderDetallePelicula(JSON.parse(this.responseText));
+			}
+			if (id == 'detalle_person'){
+				console.log('ingreso al detalle person')
+				renderDetallePerson(JSON.parse(this.responseText));
+			}
 			if(callback){
 				callback();
 			}
@@ -448,60 +441,85 @@ function renderDetallePelicula(data){
 	producer.innerHTML = 'Producida por: ' + data.producer;
 	release_date.innerHTML = 'Fecha de Lanzamiento: ' + data.release_date;
 	getDetalleLista(data.characters);
+
+	detail_planet_film.onclick = function(event){
+		getDetalleLista(data.planets);
+		document.getElementById('detail_person_film').setAttribute('class','nav-link')
+		document.getElementById('detail_planet_film').setAttribute('class','nav-link active')
+		document.getElementById('detail_species_film').setAttribute('class','nav-link')
+		document.getElementById('detail_naves_film').setAttribute('class','nav-link')
+		document.getElementById('detail_vehiculos_film').setAttribute('class','nav-link')
+	}
+
+	detail_species_film.onclick = function(event){
+		getDetalleLista(data.species);
+		document.getElementById('detail_person_film').setAttribute('class','nav-link')
+		document.getElementById('detail_planet_film').setAttribute('class','nav-link')
+		document.getElementById('detail_species_film').setAttribute('class','nav-link active')
+		document.getElementById('detail_naves_film').setAttribute('class','nav-link')
+		document.getElementById('detail_vehiculos_film').setAttribute('class','nav-link')
+	}
+
+	detail_naves_film.onclick = function(event){
+		getDetalleLista(data.starships);
+		document.getElementById('detail_person_film').setAttribute('class','nav-link')
+		document.getElementById('detail_planet_film').setAttribute('class','nav-link')
+		document.getElementById('detail_species_film').setAttribute('class','nav-link')
+		document.getElementById('detail_naves_film').setAttribute('class','nav-link  active')
+		document.getElementById('detail_vehiculos_film').setAttribute('class','nav-link')
+	}
+
+	detail_vehiculos_film.onclick = function(event){
+		getDetalleLista(data.vehicles);
+		document.getElementById('detail_person_film').setAttribute('class','nav-link')
+		document.getElementById('detail_planet_film').setAttribute('class','nav-link')
+		document.getElementById('detail_species_film').setAttribute('class','nav-link')
+		document.getElementById('detail_naves_film').setAttribute('class','nav-link')
+		document.getElementById('detail_vehiculos_film').setAttribute('class','nav-link active')
+	}
+
+	detail_person_film.onclick = function(event){
+		getDetalleLista(data.characters);
+		document.getElementById('detail_person_film').setAttribute('class','nav-link active')
+		document.getElementById('detail_planet_film').setAttribute('class','nav-link')
+		document.getElementById('detail_species_film').setAttribute('class','nav-link')
+		document.getElementById('detail_naves_film').setAttribute('class','nav-link')
+		document.getElementById('detail_vehiculos_film').setAttribute('class','nav-link')
+	}
 }
 
-// function renderDetallePlanetas(data){
-// 	detalle.innerHTML = data.title
-// 	title_film.innerHTML = data.title;
-// 	episode_id.innerHTML = 'Episodio: ' + data.episode_id;
-// 	opening_crawl.innerHTML = data.opening_crawl;
-// 	director.innerHTML = 'Director: ' + data.director;
-// 	producer.innerHTML = 'Producida por: ' + data.producer;
-// 	release_date.innerHTML = 'Fecha de Lanzamiento: ' + data.release_date;
-// 	getDetalleLista(data.planets);
-// }
+function renderDetallePerson(data){
+	detalle_person.innerHTML = data.name
+	name_person.innerHTML = data.name;
+	height.innerHTML = 'Altura: '+data.height;
+	mass.innerHTML = 'Peso: '+data.mass;
+	hair_color.innerHTML = 'Color Cabello: '+data.hair_color;
+	skin_color.innerHTML = 'Color de Piel: '+data.skin_color;
+	eye_color.innerHTML = 'Color de ojos: '+data.eye_color;
+	gender.innerHTML = 'Genero: '+data.gender;
+	var imagen = buscarPersonImg(data.name, persons);
+	console.log(imagen)
+	document.getElementById('img_det_person').setAttribute('src',imagen);
+	getDetalleListaPerson(data.vehicles);
 
-// detail_person_film.onclick = function(event){
-// 	getPeticion(detalle_film_url,renderDetallePelicula,function(){
-// 		swal({
-// 			type: 'success',
-// 			title: 'Carga personajes completa!',
-// 			showConfirmButton: false,
-// 			timer: 3000
-// 		})
-// 	});
-// 	document.getElementById('detail_person_film').setAttribute('class','nav-link active')
-// 	document.getElementById('detail_planet_film').setAttribute('class','nav-link')
-// 	document.getElementById('detail_species_film').setAttribute('class','nav-link')
-// 	document.getElementById('detail_naves_film').setAttribute('class','nav-link')
-// 	document.getElementById('detail_vehiculos_film').setAttribute('class','nav-link')
-// }
+	detail_vehiculos_person.onclick = function(event){
+		getDetalleListaPerson(data.vehicles);
+		document.getElementById('detail_vehiculos_person').setAttribute('class','nav-link active')
+		document.getElementById('detail_naves_person').setAttribute('class','nav-link')
+		document.getElementById('detail_peliculas_person').setAttribute('class','nav-link')
+	}
 
-// detail_planet_film.onclick = function(event){
-// 	getPeticion(detalle_film_url,renderDetallePlaneta,function(){
-// 		swal({
-// 			type: 'success',
-// 			title: 'Carga planetas completa!',
-// 			showConfirmButton: false,
-// 			timer: 3000
-// 		})
-// 	});
-// 	document.getElementById('detail_person_film').setAttribute('class','nav-link')
-// 	document.getElementById('detail_planet_film').setAttribute('class','nav-link active')
-// 	document.getElementById('detail_species_film').setAttribute('class','nav-link')
-// 	document.getElementById('detail_naves_film').setAttribute('class','nav-link')
-// 	document.getElementById('detail_vehiculos_film').setAttribute('class','nav-link')
-// }
+	detail_naves_person.onclick = function(event){
+		getDetalleListaPerson(data.starships);
+		document.getElementById('detail_vehiculos_person').setAttribute('class','nav-link')
+		document.getElementById('detail_naves_person').setAttribute('class','nav-link active')
+		document.getElementById('detail_peliculas_person').setAttribute('class','nav-link')
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
+	detail_peliculas_person.onclick = function(event){
+		getDetalleListaPersonFilm(data.films);
+		document.getElementById('detail_vehiculos_person').setAttribute('class','nav-link')
+		document.getElementById('detail_naves_person').setAttribute('class','nav-link')
+		document.getElementById('detail_peliculas_person').setAttribute('class','nav-link active')
+	}
+}
