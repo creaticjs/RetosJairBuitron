@@ -33,6 +33,7 @@ function getUrl(url){
 			if(url == 'https://swapi.co/api/films'){
 				seccion_inicio.style.display = (seccion_inicio.style.display == 'none') ? 'none' : 'none';
 				detail_film.style.display = (detail_film.style.display == 'none') ? 'none' : 'none';
+				detail_person.style.display = (detail_person.style.display == 'none') ? 'none' : 'none';
 				seccion_lista.setAttribute('style','diplay : activate');
 				pintarPelicula(lista);
 			}
