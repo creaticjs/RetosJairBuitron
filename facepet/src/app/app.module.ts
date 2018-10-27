@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'list-pets', component: ListPetsComponent},
-  {path: 'detail-pet', component: DetailPetComponent}
+  {path: 'detail-pet/:id', component: DetailPetComponent}
 ];
 
 @NgModule({

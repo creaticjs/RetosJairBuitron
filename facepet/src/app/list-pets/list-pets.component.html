@@ -1,3 +1,26 @@
-<p>
-  list-pets works!
-</p>
+<div class="container">
+<h3>Lista de Mascotas</h3>
+<table *ngFor="let pet of listaPets">
+    <tr>
+    <div class="col-3">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{pet.image}}" alt="" height="250" width="150">
+        <div class="card-body">
+          <h5 class="card-title"><a routerLink="/detail-pet/{{pet.id}}">{{ pet.name }}</a></h5>
+          <p class="card-text">{{ pet.type }}</p>
+          <p class="card-text">{{ pet.race }}</p>
+          <p class="card-text">{{ pet.age }}</p>
+          <p class="card-text">{{ pet.propertyName }}</p>
+          <p class="card-text">{{ pet.propertyPhone }}</p>
+          <p class="card-text">{{ pet.propertyAdress }}</p>
+          <p class="card-text">{{ pet.vaccine }}</p>
+          <a href="#" class="btn btn-success">Editar</a>
+          <a href="#" class="btn btn-danger">Eliminar</a>
+        </div>
+      </div>
+    </div>
+  </tr>
+</table>
+
+
+
