@@ -9,11 +9,19 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { Routes, RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { AngularFireModule } from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AuthenticationGuard} from './services/authentication.guard';
+import { environment } from 'src/environments/environment';
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'list-pets', component: ListPetsComponent},
-  {path: 'detail-pet/:id', component: DetailPetComponent}
+  {path: 'detail-pet/:id', component: DetailPetComponent},
+
 ];
 
 @NgModule({
@@ -22,12 +30,17 @@ const appRoutes: Routes = [
     ListPetsComponent,
     HomeComponent,
     DetailPetComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
